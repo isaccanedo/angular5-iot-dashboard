@@ -1,3 +1,11 @@
+[![Build Status](https://travis-ci.org/smart-dashboard/angular-dashboard.svg?branch=master)](https://travis-ci.org/smart-dashboard/angular-dashboard)
+
+# Depricated! Visit https://pixelplux.com/product/torabito-iot-suite/
+
+This project is no longer maintained. You need to use https://pixelplux.com/product/torabito-iot-suite/, for monitoring
+your Arduino/ESP8266 project.
+
+
 # Angular 5 Iot Dashboard
 
 Angular 5 Dashboard is a management dashboard for many purposes, focused on IoT, smart home, and autonomy.
@@ -42,6 +50,14 @@ We are trying to cover as many as languages as possible. At the moment we do cov
 * English (United States)
 * Polish (Poland)
 
+Please feel free to contribute to this repository in case you want to add your language.
+
+## Right to left Support
+
+We do support RTL layout but some components are not integrated that well. Our focus was on layout, direction and etc.
+We do support Persian language at the moment as experimental, and it's not provided in commercial version.
+Marketting team would choose either if they want new languages or regions and it's out of the scope.
+
 Currently supporting experimental
 
 * Polish ( Poland )
@@ -54,6 +70,11 @@ Target to support languages:
 * Turkish ( Turkey )
 * German ( Germany, Austria )
 * Spanish ( Spain )
+
+Please feel free to contribute to the locales for your own country.
+
+![Angular Iot Dashboard | Angular 5 Dashboard | Realtime Dashboard](angular-iot-dashboard.gif "Angular Iot Dashboard | Angular 5 Dashboard | Realtime Dashboard")
+
 
 # Angular 6 Support
 We are looking forward for angular 6 release to be of first people who are providing dashboard for Angular 6.
@@ -82,3 +103,19 @@ https://stackoverflow.com/questions/10930331/how-to-sign-an-already-compiled-apk
 then, you can publish it or install it for test purposes. Please notice that we build our apk with mock data,
 so that app is not connected to any remote server and is only, for testing and demonstration purposes.
 Please fork the app, and update or CI/CD to build with your endpoint address or extra configuration.
+
+## Live preview
+
+You can see the latest deploy here: [https://owsolutions.github.io/angular5-iot-dashboard](https://owsolutions.github.io/angular5-iot-dashboard)
+
+We are hosting demo version on github. For enterprise version, please contact us.
+
+## Contribution guide
+We are so much excited to receive Pull-Requests from you. There are some simple rules that we follow in our project:
+
+* Please no comments on functions unless it's really necessary. Please refer to this article for reason: https://bradt.ca/blog/useless-code-comments/
+* Open an issue for your pull request, and start your branch name with this format: `issue/[number]-this-is-my-branch` so we can track the issue until we close it.
+* Make sure your code passes tests, linting and e2e tests. For new functionality, please add abundant tests.
+
+## Copywrite
+This project is free for educational usage, code review and non-commercial usage. For enterprise/commercial usage, you need to obtain a license and please contact us at connexion.founder@outlook.com
