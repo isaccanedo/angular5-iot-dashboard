@@ -1,0 +1,45 @@
+<form>
+<app-progress-line *ngIf="isRequesting"></app-progress-line>
+
+<app-error-message *ngIf="response && response.error">{{response.error.message}}</app-error-message>
+
+<app-page-container [maintitle]="( form.id ? 'Update' : 'Create' ) + ' location'" 
+  subtitle="Categorize the devices and distribute them into locations and floors.">
+  <div class="row">
+
+    <div class="form-group col-md-6">
+      <label for="inputName" translate>Location name:</label>
+      <div class="input-group Name">
+        <input type="text" class="form-control app-location-single-name" name="name"
+        [(ngModel)]="form.name" placeholder="Location name">
+      </div>
+      <span class="error-message-inline" *ngIf="error(response, 'name')">{{error(response, 'name')}}</span>
+
+    </div>
+    
+    <div class="form-group col-md-6">
+      <label for="inputName" translate>Level:</label>
+      <div class="input-group Name">
+        <select type="text" [(ngModel)]="form.level" name="level" class="form-control app-location-single-level">
+          <option value="" disabled="disabled" selected="selected" translate>Select the level (floor)</option>
+          <option *ngFor="let option of levels" [selected]="(option.value ? option.value : option.name) == selected" value="{{option.value ? option.value : option.name}}">{{option.name}}</option>
+        </select>
+      </div>
+      <span class="error-message-inline" *ngIf="error(response, 'level')">{{error(response, 'level')}}</span>
+
+    </div>
+
+  </div>
+  
+  <label translate>Choose an image to recognize location easier:</label>
+  <app-ng-media 
+     (selectionChange)="changeSelection($event);"
+    type="single" #locationIcon></app-ng-media>
+
+    <br>
+  <button type="submit" (click)="formSubmit()" class="btn btn-primary  app-location-single-create" *ngIf="!form.id" translate>Create Location</button>
+  <button (click)="formSubmit()" class="btn btn-primary app-location-single-update" *ngIf="form.id" translate>Edit Location</button>
+  <button (click)="deleteItem()" class="btn btn-danger" *ngIf="form.id" translate>Delete Location</button>
+
+</app-page-container>
+</form>

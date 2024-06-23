@@ -1,0 +1,41 @@
+<ng-container *ngIf="device">
+  <div class="row">
+    <div class="box-title">
+      <h2 [title]="device.name">{{device.name}}</h2>
+      <p [title]="data.subTitle">{{data.subTitle | translate}}</p>
+    </div>
+  </div>
+  <div class="d-flex widget-value">
+    <div class="d-2 widget-lable">
+      <p>Temperature: </p>
+    </div>
+    <div class="d-2 current-value">
+      <p>{{device.value}} <sup>{{data.unit}}</sup></p>
+    </div>
+  </div>
+
+  <div [id]="chartName" class="chart">
+    {{chartName}}
+  </div>
+
+  
+  <div *ngIf="!HasHistory()" class="no-history">
+    {{ 'There are no history for this device to draw usage chart.' | translate }}
+  </div>
+  <div class="row">
+    <div class="d-flex st-bar">
+      <div class="d-2 col-sm-4">
+        N/A<sup>°</sup>
+        <p>{{'Average' | translate}}</p>
+      </div>
+      <div class="d-2 col-sm-4">
+        N/A <sup>°</sup>
+        <p>{{'Highest' | translate}}</p>
+      </div>
+      <div class="d-2 col-sm-4">
+        N/A <sup>°</sup>
+        <p>{{'Lowest' | translate}}</p>
+      </div>
+    </div>
+  </div>
+  </ng-container>

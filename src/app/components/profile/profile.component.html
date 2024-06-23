@@ -1,0 +1,64 @@
+<app-progress-line *ngIf="isRequesting"></app-progress-line>
+<app-error-message *ngIf="response && response.error">
+  {{response.error.message}}
+</app-error-message>
+
+<app-page-container maintitle="My profile" subtitle="Manage and edit your personal and other information">
+  <form>
+  <div class="row">
+    <div class="col-md-6 unit">
+      <label class="label" translate>Firstname:</label>
+      <div class="input">
+        <input class="form-control app-profile-firstname" 
+          [(ngModel)]="form.firstname"
+          name="firstname"
+          type="text" placeholder="Your first name">
+      </div>
+    </div>
+    <div class="col-md-6 unit">
+      <label class="label" translate>Lastname:</label>
+      <div class="input">
+        <input class="form-control app-profile-lastname" 
+          [(ngModel)]="form.lastname"
+          name="lastname"
+          type="text" placeholder="Your first lastname">
+      </div>
+    </div>
+    <div class="col-md-6 unit">
+      <label class="label" translate>Phone:</label>
+      <div class="input">
+        <input class="form-control app-profile-phone" 
+          [(ngModel)]="form.phone"
+          name="phone"
+          type="text" placeholder="Your first phone">
+      </div>
+    </div>
+  </div>
+
+  <button type="submit" (click)="SubmitForm()" 
+    class="btn btn-primary app-profile-update">Update my profile</button>
+  </form>
+</app-page-container>
+
+<app-page-container maintitle="Regional options" subtitle="Set your language, location and timezone">
+  <form>
+  <div class="row">
+    <div class="col-md-6 unit">
+      <label class="label" translate>Language:</label>
+      <div class="input">
+        <select class="form-control app-profile-language" 
+          [(ngModel)]="form.preferences.language"
+          name="preferences_language"
+          (change)="ChangeLanguage()"
+          type="text">
+          <option *ngFor="let item of langs;" [value]="item.lang" [selected]="currentLang === item.lang">{{item.label}}</option>
+        </select>
+        <span class="warning">
+          {{ 'At the moment, for some languages might be not fully covered and you still see english words.' | translate }}
+          {{ 'Plus, we do not store your preference in your account since it\'s an experimental feature.' | translate }}
+        </span>
+      </div>
+    </div>
+  </div>
+  </form>
+</app-page-container>

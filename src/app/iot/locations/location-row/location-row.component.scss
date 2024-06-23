@@ -1,0 +1,48 @@
+@import 'injects';
+
+.location-image {
+    width: 200px;
+}
+.imaga-wrapper {
+    padding: 0 20px;
+}
+.list-names 
+{
+    padding:  0;
+    min-width: 225px;
+    li {
+        display: block;
+        padding: 8px 10px;
+        background: #fafafa;
+        margin:  5px;
+        border-radius:  5px;
+        .status {
+            float: right;
+        }
+    }
+}
+.location-devices {
+    color: #555;
+    font-size: 17px;
+    padding-left: 10px;
+    margin-bottom: 7px;
+    padding-bottom: 7px;
+}
+
+::ng-deep body[dir="rtl"] {
+    .list-names 
+    {
+        li {
+            .status {
+                float: left !important;
+            }
+        }
+    }
+}
+
+
+@media (max-width: 991.98px) {
+    .location-image {
+        width: 175px;
+    }   
+}

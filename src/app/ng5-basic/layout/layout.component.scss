@@ -1,0 +1,54 @@
+#layout{
+  position: fixed !important;
+    z-index: -1;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 7.2em;
+    transition-duration: .5s;
+    transition-timing-function: cubic-bezier(.25,.8,.25,1);
+    transition-property: right, left;
+    &.side-on{
+        left: 285px;
+        right: -285px;
+    }
+    .inside-wrapper{
+        padding: 0 20px;
+    }
+}
+
+::ng-deep body[dir="rtl"] {
+    #layout{
+        &.side-on{
+            right: 285px;
+            left: -285px;
+            @media (min-width: 992px) {
+                left: 0;
+            }
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    #layout {
+        top: 4.1em !important;
+    }
+}
+@media (max-width: 767.98px) {
+    #layout {
+        top: 4.5em;
+    }
+}
+
+
+@media (min-width: 992px) {
+    #layout {
+        top: 4.5em;
+        &.side-on{
+            right: 0;
+        }
+        .inside-wrapper{
+            padding: 30px 50px 20px 50px;
+        }
+    }
+}

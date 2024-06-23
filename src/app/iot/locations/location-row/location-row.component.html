@@ -1,0 +1,12 @@
+<div class="row place-row clearfix">
+  <div class="imaga-wrapper">
+    <img class="location-image" [src]="location.icon" [alt]="location.name">
+  </div>
+  <div class="col" *ngIf="widgets.length">
+    <ul class="list-names" *ngIf="widgets && widgets.length > 0">
+      <li *ngFor="let device of widgets;">
+        <i class="icon-thermometer-lines"></i> {{device.name}} : <span class="status">{{device.value}} <sup>°C</sup></span>
+      </li>
+    </ul>
+  </div>
+</div>
