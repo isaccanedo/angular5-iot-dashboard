@@ -1,4 +1,4 @@
-## Angular 5 Iot Dashboard
+# Angular 5 Iot Dashboard
 
 Angular 5 Dashboard is a management dashboard for many purposes, focused on IoT, smart home, and autonomy.
 This project, is a fully functional app and is hosted on https://pixelplux.com/product/torabito-iot-suite/ as an enterprise product. We are sharing many components and our workflow here inside this repository.
